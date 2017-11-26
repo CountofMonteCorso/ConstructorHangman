@@ -3,20 +3,23 @@ var inquirer = require("inquirer");
 var wordPool = ["Edgar Allen Poe", "Kelsey Grammar", "toothpaste", "pizza", "lamp"];
 
 
-var lettersOfTheWord = [];
+var numLetter = [];
 var matchedLetters = [];
 var guessedLetters = [];
 var blanks = [];
+var attempts = 10;
 
-var Word = function(word) {
+var Word = function() {
 	this.word = word;
-	this.lettersOfTheWord = this.word.split("");
+	this.numLetter = this.word.split("");
 
 	this.makeBlanks = function(){
-			for (var i = 0; i < this.lettersOfTheWord.length; i++) {
+			for (var i = 0; i < this.numLetter.length; i++) {
 		blanks.push(" _ ");
-		console.log(lettersOfTheWord[i]);
+
+		console.log(numLetter[i]);
 			}
+
 	};
 	return blanks;
 };	
